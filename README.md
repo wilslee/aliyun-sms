@@ -6,7 +6,7 @@
 
 ### 安装
 ```
-    >> python setup.py install
+>> python setup.py install
 ```
 
 ### 使用
@@ -16,6 +16,6 @@ from aliyunsms.services import BaseClient
 
 if __name__ == '__main__':
     client = BaseClient('AliyunAccessKeyId', 'AliyunAccessKeySecret')
-    client.send_sms(phone_numbers, sign_name, template_code, template_param)
-    client.test_send_sms('YourPhone')
+    client.send_sms('手机号码', '短信签名', '模版ID', 模版参数)
+    client.test_send_sms('手机号码')
 ```
