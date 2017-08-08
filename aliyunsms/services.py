@@ -22,9 +22,7 @@ class BaseClient(object):
 
     def send_sms(self, phone_numbers, sign_name, template_code, template_param=None):
         if isinstance(phone_numbers, (list, tuple)):
-            pass
-        elif isinstance(phone_numbers, str):
-            phone_numbers = [phone_numbers, ]
+            phone_numbers = ','.join(phone_numbers)
 
         smsRequest = SendSmsRequest.SendSmsRequest()
         # 申请的短信模板编码,必填
@@ -49,4 +47,4 @@ class BaseClient(object):
         sign_name = '阿里云短信测试专用'
         template_code = 'SMS_73105023'
         params = {'customer': "短信测试员"}
-        return send_sms(uuid.uuid1(), phone, sign_name, template_code, params)
+        return self.send_sms(phone, sign_name, template_code, params)

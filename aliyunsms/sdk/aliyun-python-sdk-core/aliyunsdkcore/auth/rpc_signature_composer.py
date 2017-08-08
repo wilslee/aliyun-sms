@@ -23,11 +23,11 @@ standard_library.install_aliases()
 __author__ = 'alex jiang'
 import os
 import sys
+import urllib.request, urllib.parse, urllib.error
 
 parentdir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, parentdir)
 from . import sha_hmac1 as mac1
-import urllib.request, urllib.parse, urllib.error
 from ..utils import parameter_helper as helper
 
 
@@ -80,4 +80,3 @@ def get_signed_url(params, ak, secret, accept_format, method, signer=mac1):
     sign_params['Signature'] = signature
     url = '/?' + __pop_standard_urlencode(sign_params)
     return url
-
