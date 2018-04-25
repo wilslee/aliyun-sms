@@ -8,13 +8,6 @@ from codecs import open
 
 here = os.path.abspath(os.path.dirname(__file__))
 
-## 安装阿里云通信 SDK
-aliyunsdkcore_dir = os.path.join(here, 'aliyunsms/sdk/aliyun-python-sdk-core/')
-aliyunsdkdysmsapi_dir = os.path.join(here, 'aliyunsms/sdk/aliyun-python-sdk-dysmsapi/')
-os.system('cd {} && python setup.py install'.format(aliyunsdkcore_dir))
-os.system('cd {} && python setup.py install'.format(aliyunsdkdysmsapi_dir))
-# os.system('cd {}'.format(here))
-
 # Get the long description from the README file
 with open(os.path.join(here, 'README.md'), encoding='utf-8') as f:
     long_description = f.read()
@@ -47,5 +40,5 @@ setup(
     include_package_data=True,
     platforms="any",
     packages=find_packages(exclude=['contrib', 'docs', 'tests']),
-    install_requires=['django', 'future'],
+    install_requires=['future'],
 )

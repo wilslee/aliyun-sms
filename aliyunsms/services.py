@@ -48,3 +48,7 @@ class BaseClient(object):
         template_code = 'SMS_73105023'
         params = {'customer': "短信测试员"}
         return self.send_sms(phone, sign_name, template_code, params)
+
+
+class AliyunSMSClient(BaseClient):
+    pass

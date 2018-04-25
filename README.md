@@ -12,10 +12,10 @@
 ### 使用
 
 ```
-from aliyunsms.services import BaseClient
+from aliyunsms.services import AliyunSMSClient
 
 if __name__ == '__main__':
-    client = BaseClient('AliyunAccessKeyId', 'AliyunAccessKeySecret')
+    client = AliyunSMSClient('AliyunAccessKeyId', 'AliyunAccessKeySecret')
     client.send_sms('手机号码', '短信签名', '模版ID', 模版参数)
     client.test_send_sms('手机号码')
 ```
